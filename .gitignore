@@ -1,0 +1,4 @@
+.envrc
+ssh-keys/
+cert/
+temp/

@@ -1,0 +1,19 @@
+#!/bin/sh
+
+# Provide an API key. Docs for creating one at
+# https://cloud.ibm.com/docs/account?topic=account-userapikey#create_user_key.
+export IC_API_KEY="XXX"
+
+
+# All the resources created by the Makefile will use this prefix. Recommend you
+# set to 'satellite-test-' or similar (perhaps including your initials if you're
+# on a shared account), e.g. you might use 'abc-my-satellite-test-'.
+export RESOURCE_PREFIX="XXX"
+
+# IBM Cloud region
+export TF_VAR_CLOUD_REGION=us-east
+
+# DON'T CHANGE THESE LINES.
+export TF_VAR_RESOURCE_PREFIX=${RESOURCE_PREFIX}
+export ANSIBLE_HOST_KEY_CHECKING=False
+
