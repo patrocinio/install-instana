@@ -1,0 +1,60 @@
+---
+- hosts: server
+  remote_user: root
+  tasks:
+  - include: docker.yaml
+
+
+  - name: Add Instana Repository
+    apt_repository:
+      repo: deb [arch=amd64] https://self-hosted.instana.io/apt generic main
+      state: present
+      filename: docker
+      mode: 0600
+      validate_certs: no 
+    ignore_errors: yes
+
+  - name: Add Instana GPG key
+    apt_key:
+      url: https://self-hosted.instana.io/signing_key.gpg
+      state: present
+    register: key_added
+    until: key_added is not failed
+    retries: 2
+    delay: 10
+
+  - name: Install Instana package
+    apt: 
+      name:
+        - instana-console
+      state: present
+
+  - name: Copy settings.hcl file
+    copy:
+      src: settings.hcl
+      dest: /root
+
+  - name: Create directories
+    ansible.builtin.file:
+      path: "{{ item }}"
+      state: directory
+      mode: '0755'
+    with_items:
+    - /instana/log/instana
+    - /instana/data
+    - /instana/traces
+    - /instana/cert
+    - /instana/metrics
+
+  - name: Generate TLS certificate
+    command: openssl req -x509 -newkey rsa:2048 -keyout /instana/cert/tls.key -out /instana/cert/tls.crt -days 365 -nodes -subj "/CN={{ inventory_hostname_short }}"
+
+  - name: Generate hostname
+    replace:
+      path: settings.hcl
+      regexp: HOSTNAME
+      replace: "{{ ansible_default_ipv4.address }}"
+
+  - name: Install Instana... Be patient...
+    command: instana init -f settings.hcl -y
+
