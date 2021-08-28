@@ -8,10 +8,10 @@ show = json.load(file)
 f = open(HOSTS, "w")
 
 # List the master nodes
-ips =  show['values']['outputs']['nfs']['value']['floating_ips']
+ip =  show['values']['outputs']['floating_ip']['value']
 
 f.write("[server]\n")
-f.write("%s ansible_host=%s ansible_user=root\n" % (ips['name'], ips['address']))
+f.write("%s ansible_host=%s ansible_user=root\n" % (ip['name'], ip['address']))
 f.write("\n");
 
 

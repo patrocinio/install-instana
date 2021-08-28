@@ -18,7 +18,7 @@ module "instana_base" {
 }
 
 
-module "is_instance_nfs" {
+module "is_instance" {
   source = "./modules/is_instance"
 
   name                 = "${var.RESOURCE_PREFIX}-nfs"

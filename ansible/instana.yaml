@@ -53,8 +53,12 @@
     replace:
       path: settings.hcl
       regexp: HOSTNAME
-      replace: "{{ ansible_default_ipv4.address }}"
+      replace: "{{ floating_ip }}"
 
   - name: Install Instana... Be patient...
-    command: instana init -f settings.hcl -y
+    command: instana init -f settings.hcl -y --force
+    register: install_output
+
+  - debug:
+      var: install_output.stdout_lines
 
