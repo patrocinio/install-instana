@@ -17,7 +17,7 @@ prep_ansible_inventory: get_terraform_show
 	python prepare_ansible_inventory.py
 
 install-instana: prep_ansible_inventory
-	(cd ansible && ansible-playbook -v -i $(HOSTS) instana.yaml  --key-file "../ssh-keys/ssh-key" -e "floating_ip=$(shell cd terraform && terraform output -json floating_ip | jq .address | tr -d '"')" -e "sales_id=$SALES_ID")
+	(cd ansible && ansible-playbook -v -i $(HOSTS) instana.yaml  --key-file "../ssh-keys/ssh-key" -e "floating_ip=$(shell cd terraform && terraform output -json floating_ip | jq .address | tr -d '"')" -e "sales_id=${SALES_ID}" -e "agent_key=${AGENT_KEY}")
 
 ssh:
 	ssh -i ssh-keys/ssh-key root@$(shell cd terraform && terraform output -json floating_ip | jq .address | tr -d '"')
