@@ -6,9 +6,13 @@ export IC_API_KEY="XXX"
 
 
 # All the resources created by the Makefile will use this prefix. Recommend you
-# set to 'satellite-test-' or similar (perhaps including your initials if you're
-# on a shared account), e.g. you might use 'abc-my-satellite-test-'.
+# set to 'instana-' or similar (perhaps including your initials if you're
+# on a shared account), e.g. you might use 'abc-instana-'.
 export RESOURCE_PREFIX="XXX"
+
+# Instana Tokens
+export SALES_ID="XXX"
+export AGENT_KEY="XXX"
 
 # IBM Cloud region
 export TF_VAR_CLOUD_REGION=us-east

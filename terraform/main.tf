@@ -21,7 +21,7 @@ module "instana_base" {
 module "is_instance" {
   source = "./modules/is_instance"
 
-  name                 = "${var.RESOURCE_PREFIX}-nfs"
+  name                 = "${var.RESOURCE_PREFIX}"
   resource_group       = module.instana_base.resource_group_id
   subnet_id            = module.instana_base.subnet_id
   security_group_id    = module.instana_base.security_group_id

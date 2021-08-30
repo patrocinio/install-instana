@@ -55,10 +55,16 @@
       regexp: HOSTNAME
       replace: "{{ floating_ip }}"
 
-  - name: Install Instana... Be patient...
-    command: instana init -f settings.hcl -y --force
-    register: install_output
+  - name: Generate hostname
+    replace:
+      path: settings.hcl
+      regexp: SALES_ID
+      replace: "{{ sales_id }}"
 
-  - debug:
-      var: install_output.stdout_lines
+#  - name: Install Instana... Be patient...
+#    command: instana init -f settings.hcl -y --force
+#    register: install_output
+
+#  - debug:
+#      var: install_output.stdout_lines
 
