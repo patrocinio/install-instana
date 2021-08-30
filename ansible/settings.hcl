@@ -6,6 +6,7 @@ agent_key               = "AGENT_KEY"
 download_key            = "AGENT_KEY"
 sales_key               = "SALES_ID"
 host_name               = "HOSTNAME"
+token_secret            = "my-token"
 clickhouse_bind_address = ""
 
 cert {
