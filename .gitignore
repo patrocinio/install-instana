@@ -3,3 +3,4 @@ ssh-keys/
 cert/
 temp/
 terraform/terraform.*
+terraform_show.json
