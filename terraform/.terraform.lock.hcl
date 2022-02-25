@@ -2,12 +2,12 @@
 # Manual edits may be lost in future updates.
 
 provider "registry.terraform.io/ibm-cloud/ibm" {
-  version     = "1.30.1"
+  version     = "1.38.0"
   constraints = ">= 1.17.0"
   hashes = [
-    "h1:7n0oM83OHoHVS/hFOZ8qUmz54GgN++4TGLISkf00TTs=",
-    "zh:3b66cc88d4314b2bbbdd80b08f09fd70289d58f58bd397a07e8694d00bb7ee13",
-    "zh:9f94128c3655f12929666c3962500d16c2ccb0f5253de81e1f6257918e15e5f3",
-    "zh:b864fc89d256d85f2ffeca1035233229be85ae916b38119a2079ce78a1fa0984",
+    "h1:7Vm/6QAr9/sQIy5h7TmxqdXu7KGVN2axgq2+gvhv8DI=",
+    "zh:6f2868d2e83785851999b9e007ff0751d68737eb70256518f0b7f0b02da6eb0c",
+    "zh:821dd70072e92cb6c893ce09c794da3c7c2399567da1e34eb7acc82468e10ee4",
+    "zh:a3dba15c859ab196b192cf54841cefcbc6f80a835548ef2899cf68c2dcd1665c",
   ]
 }
