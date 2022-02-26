@@ -1,1 +1,1 @@
-{"Modules":[{"Key":"","Source":"","Dir":"."},{"Key":"instana_base","Source":"./modules/instana_base","Dir":"modules/instana_base"},{"Key":"is_instance","Source":"./modules/is_instance","Dir":"modules/is_instance"}]}
+{"Modules":[{"Key":"instana_base","Source":"./modules/instana_base","Dir":"modules/instana_base"},{"Key":"is_instance","Source":"./modules/is_instance","Dir":"modules/is_instance"},{"Key":"","Source":"","Dir":"."}]}

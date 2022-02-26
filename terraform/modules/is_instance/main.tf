@@ -33,3 +33,4 @@ resource "ibm_is_floating_ip" "fip" {
   target            = ibm_is_instance.is_instance.primary_network_interface[0].id
   resource_group    = var.resource_group
 }
+
