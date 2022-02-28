@@ -4,7 +4,6 @@
 # https://cloud.ibm.com/docs/account?topic=account-userapikey#create_user_key.
 export IC_API_KEY="XXX"
 
-
 # All the resources created by the Makefile will use this prefix. Recommend you
 # set to 'instana-' or similar (perhaps including your initials if you're
 # on a shared account), e.g. you might use 'abc-instana-'.

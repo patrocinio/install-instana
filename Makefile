@@ -22,4 +22,7 @@ install-instana: prep_ansible_inventory
 ssh:
 	ssh -i ssh-keys/ssh-key root@$(shell cd terraform && terraform output -json floating_ip | jq .address | tr -d '"')
 
+destroy:
+	(cd terraform && terraform destroy -auto-approve)
+
 all: create-vm install-instana

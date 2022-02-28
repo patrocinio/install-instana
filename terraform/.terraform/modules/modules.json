@@ -1,1 +1,1 @@
-{"Modules":[{"Key":"instana_base","Source":"./modules/instana_base","Dir":"modules/instana_base"},{"Key":"is_instance_nfs","Source":"./modules/is_instance","Dir":"modules/is_instance"},{"Key":"","Source":"","Dir":"."},{"Key":"is_instance","Source":"./modules/is_instance","Dir":"modules/is_instance"},{"Key":"ftm_base","Source":"./modules/ftm_base","Dir":""}]}
+{"Modules":[{"Key":"is_instance","Source":"./modules/is_instance","Dir":"modules/is_instance"},{"Key":"","Source":"","Dir":"."},{"Key":"instana_base","Source":"./modules/instana_base","Dir":"modules/instana_base"}]}
