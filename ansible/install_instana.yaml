@@ -1,0 +1,11 @@
+---
+- hosts: server
+  remote_user: root
+  tasks:
+  - name: Install Instana... Be patient...
+    command: instana init -f settings.hcl -y --force
+    register: install_output
+
+  - debug:
+      var: install_output.stdout_lines
+
